@@ -1,3 +1,4 @@
+import { useState } from 'react';
 interface Product {
   title: string;
   isFruit: boolean;
@@ -10,12 +11,16 @@ const products: Product[] = [
   { title: "Apple", isFruit: true, id: 3 },
 ];
 
+
+
 function ListGroup() {
+    const [count, setCount] = useState(0);
   return (
     <>
-      <button type="button" className="btn btn-info">
-        Groceries
+      <button type="button" className="btn btn-info" onClick={() => setCount(count + 1)}>
+        Count is {count}
       </button>
+      <button type="button" className="btn btn-info" onClick={()=> setCount(count + 1)}>test</button>
 
       <ul className="list-group">
         {products.map((product) => (
