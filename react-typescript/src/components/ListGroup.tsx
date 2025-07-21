@@ -19,7 +19,9 @@ function ListGroup() {
 
       <ul className="list-group">
         {products.map((product) => (
-          <li className="list-group-item list-group-item-info">
+          <li className="list-group-item list-group-item-info" style={{
+        color: product.isFruit ? 'magenta' : ''
+      }}>
             {product.title}
           </li>
         ))}
